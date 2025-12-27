@@ -14,12 +14,12 @@ export default function Footer() {
           <div>
            <Link href="/" className="flex items-center">
             <Image 
-                src="/logo.jpeg" // Remplacez par le nom exact de votre fichier dans /public
-                alt="Rizuk Logo"
-                width={200}           // Largeur souhaitée (en pixels)
-                height={150}          // Hauteur souhaitée (en pixels)
-                priority             // Indispensable pour le logo car c'est un élément LCP (chargement prioritaire)
-                className="h-40 p-2 w-auto" // Permet de gérer la taille avec Tailwind
+                src="/logo.jpeg"
+                width={200}         
+                height={150}       
+                alt='logo'   
+                priority             
+                className="h-40 p-2 w-auto" 
             />
             </Link>
             <p className="text-gray-600 text-sm">
