@@ -10,38 +10,90 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-[#0F2854]   ">
       <nav className="container mx-auto px-6 max-w-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
         <Link href="/" className="flex items-center">
             <Image 
-                src="/logo.jpeg" // Remplacez par le nom exact de votre fichier dans /public
+                src="/logo.png" // Remplacez par le nom exact de votre fichier dans /public
                 alt="Rizuk Logo"
                 width={200}           // Largeur souhaitée (en pixels)
                 height={150}          // Hauteur souhaitée (en pixels)
                 priority             // Indispensable pour le logo car c'est un élément LCP (chargement prioritaire)
-                className="h-35 p-2 w-auto" // Permet de gérer la taille avec Tailwind
+                className="h-40 pt-2 mt-1 w-auto" // Permet de gérer la taille avec Tailwind
             />
             </Link>
 
 
           {/* Navigation desktop */}
-          <div className="hidden md:flex items-center space-x-8">
-            {NAVIGATION_LINKS.map((link) => (
+        <div className="hidden md:flex items-center space-x-8">
+          {NAVIGATION_LINKS.map((link) =>
+            link.label === "Produit" ? (
+              <div key={link.href} className="relative group">
+                {/* Lien Produits */}
+                <Link
+                  href={link.href}
+                  className="text-white text-xl hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+
+                {/* Sous-menu */}
+                <div
+                  className="
+                    absolute left-1/2 top-full mt-5 w-[520px] -translate-x-1/2
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300
+                  "
+                >
+                  <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 grid grid-cols-2 gap-6">
+
+                    {/* Chauffe-biberon */}
+                    <Link
+                      href="/produits/chauffe-biberon"
+                      className="p-4 rounded-2xl hover:bg-gray-50 transition"
+                    >
+                      <h3 className="text-lg font-bold text-gray-900">
+                        Chauffe-biberon
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Chauffe rapide et homogène pour préserver les nutriments du lait.
+                      </p>
+                    </Link>
+
+                    {/* Robot culinaire */}
+                    <Link
+                      href="/produits/robot-culinaire"
+                      className="p-4 rounded-2xl hover:bg-gray-50 transition"
+                    >
+                      <h3 className="text-lg font-bold text-gray-900">
+                        Robot culinaire
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Préparez facilement des repas sains et équilibrés pour bébé.
+                      </p>
+                    </Link>
+
+                  </div>
+                </div>
+              </div>
+            ) : (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-primary transition-colors"
+                className="text-white text-xl hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
-            ))}
-          </div>
+            )
+          )}
+        </div>
+
 
           {/* CTA desktop */}
           <div className="hidden md:block">
-            <Button href="/contact" variant="primary">
+            <Button href="/contact" className='px-8 py-4 bg-white/50 backdrop-blur-sm'>
               Nous contacter
             </Button>
           </div>
@@ -53,7 +105,7 @@ export default function Header() {
             aria-label="Menu"
           >
             <svg
-              className="w-6 h-6 text-gray-900"
+              className="w-6 h-6 text-white"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -72,19 +124,19 @@ export default function Header() {
 
         {/* Menu mobile */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 ">
             {NAVIGATION_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-3 text-gray-600 hover:text-primary transition-colors"
+                className="block py-3 text-white hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
             <div className="mt-4">
-              <Button href="/contact" variant="primary" className="w-full">
+              <Button href="/contact" variant="primary" className=" w-full px-8 py-4 bg-white/50 backdrop-blur-sm">
                 Nous contacter
               </Button>
             </div>

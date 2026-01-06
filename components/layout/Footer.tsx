@@ -5,7 +5,7 @@ import { SITE_CONFIG, NAVIGATION_LINKS } from '@/lib/constants';
 import Image from 'next/image';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
+// bg-[#0F2854]
   return (
     <footer className="bg-[#0F2854] border-t border-gray-200">
       <div className="container mx-auto px-6 max-w-container py-16">
@@ -14,7 +14,7 @@ export default function Footer() {
           <div >
            <Link href="/" className="flex items-center">
             <Image 
-                src="/logo.jpeg"
+                src="/logo.png"
                 width={200}         
                 height={150}       
                 alt='logo'   
