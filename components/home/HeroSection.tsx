@@ -31,7 +31,7 @@ export default function HeroSection() {
            préserve chaque vitamine pour des repas sains, prêts en un clin d'œil.
           </p>
           <div className="flex md:ml-20 flex-col sm:flex-row gap-4">
-            <Button href="/produit" variant="primary" className="px-8 py-4">
+            <Button href="/produits" variant="primary" className="px-8 py-4">
               Découvrir l'appareil
             </Button>
             <Button href="/recettes"  className="px-8 py-4 bg-white/50 backdrop-blur-sm">

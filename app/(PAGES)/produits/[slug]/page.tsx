@@ -11,7 +11,7 @@ const PRODUCTS_DATA: any = {
   'chauffe-biberon': {
     title: 'Chauffe-Biberon Ultra-Rapide',
     tagline: 'La précision au service de chaque biberon.',
-    price: '49,99 €',
+    price: '39,99 €',
     images: ['/carousel-1.jpeg'],
     description: 'Conçu pour préserver les nutriments du lait maternel grâce à une chauffe douce et uniforme.',
     features: [
@@ -29,7 +29,7 @@ const PRODUCTS_DATA: any = {
   'robot-culinaire': {
     title: 'Robot Culinaire ',
     tagline: 'La révolution de la diversification alimentaire.',
-    price: '129,99 €',
+    price: '79,99 €',
     images: [
     '/rizuk-1.jpeg',
     '/rizuk-2.jpeg',
