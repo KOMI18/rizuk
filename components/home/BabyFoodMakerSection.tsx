@@ -48,7 +48,7 @@ export default function BabyFoodMakerSection() {
             RIZUK conçoit des solutions innovantes pour accompagner les parents dans la nutrition de leurs bébés.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Button href="/produit" variant="primary" className="w-full sm:w-auto">
+            <Button href="/produits" variant="primary" className="w-full sm:w-auto">
               Découvrir le Baby Food Maker
             </Button>
             

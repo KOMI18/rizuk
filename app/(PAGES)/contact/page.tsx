@@ -46,7 +46,7 @@ export default function ContactPage() {
   return (
     <main className="pt-32 pb-20 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="bg-white rounded-[2.5rem] shadow-xl p-8 md:p-16 border border-gray-100">
+        <div className="bg-white rounded-[2.5rem] p-8 md:p-16 ">
           <Heading level={1} className="mb-4">Finalisons votre projet</Heading>
           <p className="text-gray-600 mb-12">
             Laissez-nous vos coordonnées. Un expert Rizuk vous contactera pour valider les modalités de paiement et de livraison.

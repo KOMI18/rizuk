@@ -27,7 +27,7 @@ const PRODUCTS_DATA: any = {
     ]
   },
   'robot-culinaire': {
-    title: 'Robot Culinaire 4-en-1',
+    title: 'Robot Culinaire ',
     tagline: 'La révolution de la diversification alimentaire.',
     price: '129,99 €',
     images: [

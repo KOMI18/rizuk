@@ -16,7 +16,7 @@ const PRODUCTS = [
     id: 'robot-culinaire',
     title: 'Robot Culinaire 4-en-1',
     description: 'Cuisinez à la vapeur, mixez, décongelez et réchauffez. Le compagnon de la diversification.',
-    image: '/carousel-2.png',
+    image: '/rizuk-1.jpeg',
     color: 'bg-gray-50',
     link: '/produits/robot-culinaire'
   }
