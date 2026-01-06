@@ -20,8 +20,8 @@ export const SITE_CONFIG = {
 
 export const NAVIGATION_LINKS = [
   { href: '/', label: 'Accueil' },
-  { href: '/produits', label: 'Produit' },
-  { href: '/a-propos', label: 'À propos' },
+  { href: '/produits', label: 'Produits' },
+  { href: '/a-propos', label: 'A propos' },
   { href: '/partenariats', label: 'Partenariats' },
   { href: '/contact', label: 'Contact' },
   { href: '/recettes', label: 'Recettes' },
