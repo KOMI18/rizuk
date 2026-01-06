@@ -8,7 +8,7 @@ const PRODUCTS = [
     id: 'chauffe-biberon',
     title: 'Chauffe-Biberon Ultra-Rapide',
     description: 'La température idéale en moins de 2 minutes, sans point chaud pour la sécurité de bébé.',
-    image: '/carousel-1 1.png', // Image sur fond blanc ou détourée
+    image: '/carousel-1.jpeg', // Image sur fond blanc ou détourée
     color: 'bg-gray-50',
     link: '/produits/chauffe-biberon'
   },
@@ -16,7 +16,7 @@ const PRODUCTS = [
     id: 'robot-culinaire',
     title: 'Robot Culinaire 4-en-1',
     description: 'Cuisinez à la vapeur, mixez, décongelez et réchauffez. Le compagnon de la diversification.',
-    image: '/carousel-2.png',
+    image: '/rizuk-1.jpeg',
     color: 'bg-gray-50',
     link: '/produits/robot-culinaire'
   }

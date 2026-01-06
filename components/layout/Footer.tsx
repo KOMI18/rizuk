@@ -7,11 +7,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-[#0F2854] border-t border-gray-200">
       <div className="container mx-auto px-6 max-w-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Colonne 1 : Logo + Baseline */}
-          <div>
+          <div >
            <Link href="/" className="flex items-center">
             <Image 
                 src="/logo.jpeg"
@@ -19,23 +19,23 @@ export default function Footer() {
                 height={150}       
                 alt='logo'   
                 priority             
-                className="h-40 p-2 w-auto" 
+                className="h-40 rounded-full p-4  mb-2 w-auto" 
             />
             </Link>
-            <p className="text-gray-600 text-sm">
+            <p className="text-white text-sm">
               {SITE_CONFIG.tagline}
             </p>
           </div>
 
           {/* Colonne 2 : Navigation */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Navigation</h4>
+            <h4 className="font-semibold text-white  text-3xl mb-4">Navigation</h4>
             <ul className="space-y-3">
               {NAVIGATION_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-primary transition-colors text-sm"
+                    className="text-white hover:text-primary transition-colors text-xl"
                   >
                     {link.label}
                   </Link>
@@ -46,12 +46,12 @@ export default function Footer() {
 
           {/* Colonne 3 : Légal */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Légal</h4>
+            <h4 className="font-semibold text-white  text-3xl mb-4">Légal</h4>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/mentions-legales"
-                  className="text-gray-600 hover:text-primary transition-colors text-sm"
+                  className="text-white hover:text-primary transition-colors text-xl"
                 >
                   Mentions légales
                 </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/mentions-legales#confidentialite"
-                  className="text-gray-600 hover:text-primary transition-colors text-sm"
+                  className="text-white hover:text-primary transition-colors text-xl"
                 >
                   Politique de confidentialité
                 </Link>
@@ -69,12 +69,12 @@ export default function Footer() {
 
           {/* Colonne 4 : Contact */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Contact</h4>
+            <h4 className="font-semibold text-white text-3xl mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-gray-600 hover:text-primary transition-colors text-sm"
+                  className="text-white hover:text-primary transition-colors text-xl"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`}
-                  className="text-gray-600 hover:text-primary transition-colors text-sm"
+                  className="text-white hover:text-primary transition-colors text-sm"
                 >
                   {SITE_CONFIG.phone}
                 </a>
@@ -93,7 +93,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-600 text-sm">
+          <p className="text-white text-sm">
             © {currentYear} {SITE_CONFIG.name}. Tous droits réservés.
           </p>
         </div>

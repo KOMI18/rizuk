@@ -1,7 +1,10 @@
-import React from 'react';
+
 import Image from 'next/image';
 import { CheckCircle2, Zap, ShieldCheck, Thermometer } from 'lucide-react';
 import Button from '@/components/ui/Button';
+import ProductGallery from '@/components/Product/ProductGallery';
+import { Feature } from '@/type/ProductType';
+import FeatureList from '@/components/Product/FeatureList';
 
 // Simulation de base de données produits
 const PRODUCTS_DATA: any = {
@@ -9,13 +12,13 @@ const PRODUCTS_DATA: any = {
     title: 'Chauffe-Biberon Ultra-Rapide',
     tagline: 'La précision au service de chaque biberon.',
     price: '49,99 €',
-    image: '/carousel-1.jpg',
+    images: ['/carousel-1.jpeg'],
     description: 'Conçu pour préserver les nutriments du lait maternel grâce à une chauffe douce et uniforme.',
     features: [
-      { icon: Zap, text: 'Chauffe en 2 minutes' },
-      { icon: Thermometer, text: 'Contrôle intelligent de température' },
-      { icon: ShieldCheck, text: 'Arrêt automatique de sécurité' },
-      { icon: CheckCircle2, text: 'Sans BPA' },
+    { icon: "zap", text: "Chauffe en 2 minutes" },
+    { icon: "thermometer", text: "Contrôle intelligent de température" },
+    { icon: "shield", text: "Arrêt automatique de sécurité" },
+    { icon: "check", text: "Sans BPA" },
     ],
     details: [
       { label: 'Dimensions', value: '16 x 14 x 15 cm' },
@@ -27,19 +30,26 @@ const PRODUCTS_DATA: any = {
     title: 'Robot Culinaire 4-en-1',
     tagline: 'La révolution de la diversification alimentaire.',
     price: '129,99 €',
-    image: '/carousel-2.png',
+    images: [
+    '/rizuk-1.jpeg',
+    '/rizuk-2.jpeg',
+    '/rizuk-3.jpeg',
+    '/rizuk-4.jpeg',
+    "/rizuk-5.jpeg"
+  ],
     description: 'Cuisinez à la vapeur, mixez, décongelez et réchauffez vos repas sains en un seul geste.',
     features: [
-      { icon: Zap, text: 'Cuisson vapeur ultra-rapide' },
-      { icon: Thermometer, text: 'Texture réglable (lisse ou morceaux)' },
-      { icon: ShieldCheck, text: 'Bol grande capacité 1100ml' },
-      { icon: CheckCircle2, text: 'Lames haute performance' },
+    { icon: "zap", text: "Chauffe en 2 minutes" },
+    { icon: "thermometer", text: "Contrôle intelligent de température" },
+    { icon: "shield", text: "Arrêt automatique de sécurité" },
+    { icon: "check", text: "Sans BPA" },
     ],
     details: [
       { label: 'Puissance', value: '400W' },
       { label: 'Matériaux', value: 'Plastique haute résistance sans BPA' },
       { label: 'Accessoires', value: 'Spatule et livret de recettes inclus' },
     ]
+
   }
 };
 
@@ -47,6 +57,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         const { slug } = await params;
         const product = PRODUCTS_DATA[slug];
         console.log("Slug reçu :", slug);
+
   
    if (!product) {
     return (
@@ -62,17 +73,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       {/* SECTION 1 : HERO PRODUIT */}
       <section className="pt-32 pb-20 bg-[#F9F9F9]">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Visuel Produit */}
-          <div className="relative aspect-square bg-white rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 p-12">
-            <Image 
-              src={product.image} 
-              alt={product.title} 
-              fill 
-              className="object-contain p-8"
-              priority
-            />
-          </div>
-
+          <ProductGallery product={product} />
           {/* Infos Achat */}
           <div>
             <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Produit Phare</span>
@@ -105,16 +106,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       {/* SECTION 2 : CARACTÉRISTIQUES CLÉS (Icônes) */}
       <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-            {product.features.map((feature: any, i: number) => (
-              <div key={i} className="flex flex-col items-center text-center group">
-                <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                  <feature.icon size={32} strokeWidth={1.5} />
-                </div>
-                <p className="font-semibold text-gray-900">{feature.text}</p>
-              </div>
-            ))}
-          </div>
+           <FeatureList features={product.features} />
+
         </div>
       </section>
 
@@ -136,7 +129,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       {/* SECTION 4 : IMAGE LIFESTYLE IMMERSIVE */}
       <section className="relative h-[600px] w-full">
         <Image 
-          src={`/images/${slug}-lifestyle.jpg`} 
+          src={`/image-1.jpg`} 
           alt="Utilisation en situation"
           fill
           className="object-cover"

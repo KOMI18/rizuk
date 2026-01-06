@@ -21,7 +21,7 @@ export default function Header() {
                 width={200}           // Largeur souhaitée (en pixels)
                 height={150}          // Hauteur souhaitée (en pixels)
                 priority             // Indispensable pour le logo car c'est un élément LCP (chargement prioritaire)
-                className="h-40 p-2 w-auto" // Permet de gérer la taille avec Tailwind
+                className="h-35 p-2 w-auto" // Permet de gérer la taille avec Tailwind
             />
             </Link>
 
