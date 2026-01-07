@@ -11,7 +11,7 @@ const RECIPES_DATA: any = {
     prepTime: "5 min",
     cookTime: "15 min",
     difficulty: "Très facile",
-    image: "/velouter-carotte.jfif",
+    image: "/velouter-carotte.jpeg",
     description: "Une introduction douce aux saveurs florales, parfaite pour éveiller les sens de bébé tout en douceur.",
     ingredients: [
       "2 grosses carottes bio",
@@ -40,7 +40,7 @@ export default async function RecipeDetailPage({ params }: { params: Promise<{ s
       {/* HERO RECETTE */}
       <section className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
         <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
-          <Image src={recipe.image} alt={recipe.title} fill className="object-cover" />
+          <Image src={recipe.image} alt={recipe.title} fill className="object-contain p-8 transition-all rounded-[3rem]" />
         </div>
         
         <div>
