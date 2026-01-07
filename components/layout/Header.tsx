@@ -13,7 +13,7 @@ export default function Header() {
   return (
     
 <header className="sticky md:h-45 top-0 z-50 bg-[#0F2854]">
-  <div className="hidden md:block bg-[#ed7332] h-15  text-white text-xl">
+  <div className="hidden md:block bg-[#ed7332] h-15  text-white text-sm">
   <div className="container mx-auto px-6  max-w-container flex justify-between align-center py-2">
     <span className='flex  items-center'>
         <Image
@@ -23,7 +23,7 @@ export default function Header() {
           height={28}
           className="mb-1  opacity-90"
                     /> 
-      Livraison gratuite dès 500€
+      Livraison gratuite dès 150€
       </span>
     <span className='flex  items-center'>
         <Image
@@ -59,7 +59,7 @@ export default function Header() {
           width={200}
           height={150}
           priority
-          className=" h-30 md:h-50 w-auto"
+          className=" h-25 md:h-45 w-auto"
         />
       </Link>
 

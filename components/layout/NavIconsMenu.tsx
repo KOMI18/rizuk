@@ -25,7 +25,7 @@ export default function NavIconsBar() {
               />
 
               {/* Texte */}
-              <span className="text-xl">{link.label}</span>
+              <span>{link.label}</span>
 
               {/* Barre underline */}
               <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-white transition-all group-hover:w-full"></span>

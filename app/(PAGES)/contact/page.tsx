@@ -19,13 +19,15 @@ function ContactForm() {
         <input type="email" placeholder="Ex: marie.dupont@email.com" className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
       </div>
       <div className="md:col-span-2 flex flex-col gap-2">
-        <label className="font-semibold text-gray-700 ml-2">Produit souhaité</label>
+        <label className="font-semibold text-gray-700 ml-2">Produit/Services souhaité ? </label>
         <select 
           defaultValue={produitSelectionne || ""}
           className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none appearance-none"
         >
           <option value="robot-culinaire">Robot Culinaire 4-en-1</option>
           <option value="chauffe-biberon">Chauffe-Biberon Ultra-Rapide</option>
+          <option value="chauffe-biberon">Un Partenariat</option>
+
         </select>
       </div>
 

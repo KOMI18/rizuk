@@ -22,7 +22,7 @@ export const NAVIGATION_LINKS = [
   { href: '/', label: 'Accueil' },
   { href: '/produits', label: 'Produits' },
   { href: '/a-propos', label: 'A propos' },
-  { href: '/partenariats', label: 'Partenariats' },
+  // { href: '/partenariats', label: 'Partenariats' },
   { href: '/contact', label: 'Contact' },
   { href: '/recettes', label: 'Recettes' },
 
