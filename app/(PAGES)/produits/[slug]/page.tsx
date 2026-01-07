@@ -22,7 +22,7 @@ const PRODUCTS_DATA: any = {
     { icon: "check", text: "Sans BPA" },
     ],
     details: [
-      { label: 'Dimensions', value: '11 x 10 x 10,98 cm ; 250 g' },
+      { label: 'Dimensions', value: '11 x 10 x 10,98 cm' },
       { label: 'Poids', value: '250 g' },
 
       { label: 'Compatibilité', value: 'Toutes marques de biberons' },
@@ -53,7 +53,9 @@ const PRODUCTS_DATA: any = {
     details: [
       { label: 'Puissance', value: '400W' },
       { label: 'Matériaux', value: 'Plastique haute résistance sans BPA' },
-      { label: 'Accessoires', value: 'Spatule et livret de recettes inclus' },
+      { label: 'Capacité du bol', value: '1 L pour la cuisson vapeur et 720 mL pour le mixage' },
+     
+
     ]
 
   }
