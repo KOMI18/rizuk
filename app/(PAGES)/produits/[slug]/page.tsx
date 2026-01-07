@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 import ProductGallery from '@/components/Product/ProductGallery';
 import { Feature } from '@/type/ProductType';
 import FeatureList from '@/components/Product/FeatureList';
+import ProductDescription from '@/components/Product/ProductDetailedDescription';
 
 // Simulation de base de données produits
 const PRODUCTS_DATA: any = {
@@ -13,7 +14,7 @@ const PRODUCTS_DATA: any = {
     tagline: 'La précision au service de chaque biberon.',
     price: '39,99 €',
     images: ['/carousel-1.jpeg'],
-    description: 'Conçu pour préserver les nutriments du lait maternel grâce à une chauffe douce et uniforme.',
+   description: 'Le chauffe-biberon RIZUK simplifie chaque tétée, de jour comme de nuit. Pensé pour les jeunes parents, il chauffe rapidement, maintient la température idéale et garantit une utilisation sûre, même à 3h du matin.',
     features: [
     { icon: "zap", text: "Chauffe en 2 minutes" },
     { icon: "thermometer", text: "Contrôle intelligent de température" },
@@ -21,9 +22,14 @@ const PRODUCTS_DATA: any = {
     { icon: "check", text: "Sans BPA" },
     ],
     details: [
-      { label: 'Dimensions', value: '16 x 14 x 15 cm' },
+      { label: 'Dimensions', value: '11 x 10 x 10,98 cm ; 250 g' },
+      { label: 'Poids', value: '250 g' },
+
       { label: 'Compatibilité', value: 'Toutes marques de biberons' },
-      { label: 'Garantie', value: '2 ans' },
+      { label: 'Couleur', value: 'Blanche' },
+      { label: 'Composition des matériaux', value: 'Polyacrylique' },
+      { label: 'Instructions de soins ', value: 'Veuillez nettoyer l’appareil avec un chiffon, ne pas tremper dans l’eau.' },
+
     ]
   },
   'robot-culinaire': {
@@ -102,6 +108,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
+        <ProductDescription slug={slug}/>
 
       {/* SECTION 2 : CARACTÉRISTIQUES CLÉS (Icônes) */}
       <section className="py-24">

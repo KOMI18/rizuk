@@ -18,3 +18,9 @@ export type Product = {
   details:Details[]
   images: string[]
 }
+
+export interface ProductDetails {
+  title: string;
+  features: string[];
+}
+
