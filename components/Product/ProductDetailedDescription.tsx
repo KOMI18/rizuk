@@ -11,7 +11,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ slug }) => {
   if (!product) return null;
 
   return (
-    <section className="p-20 bg-[#F9F9F9]">
+    <section className="p-5 md:p-20 bg-[#F9F9F9]">
       <h2 className="text-2xl font-semibold mb-4">
         Description du produit
       </h2>
