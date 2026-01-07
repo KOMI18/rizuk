@@ -11,7 +11,7 @@ const RECIPES = [
     age: "6+ mois",
     duration: "15 min",
     category: "Légumes",
-    image: "/velouter-carotte.jpeg", // Image lumineuse, vue de haut
+    image: "/velouter-carott.jpeg", // Image lumineuse, vue de haut
     slug: "veloute-carottes"
   },
   // {
