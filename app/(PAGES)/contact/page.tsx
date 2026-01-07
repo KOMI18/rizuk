@@ -27,6 +27,8 @@ function ContactForm() {
           <option value="robot-culinaire">Robot Culinaire 4-en-1</option>
           <option value="chauffe-biberon">Chauffe-Biberon Ultra-Rapide</option>
           <option value="chauffe-biberon">Un Partenariat</option>
+          <option value="chauffe-biberon">Autres</option>
+
 
         </select>
       </div>

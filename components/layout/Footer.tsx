@@ -58,7 +58,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/mentions-legales#confidentialite"
+                  href="/politique"
                   className="text-white hover:text-primary transition-colors text-xl"
                 >
                   Politique de confidentialité
