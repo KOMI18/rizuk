@@ -18,6 +18,7 @@ export const SITE_CONFIG = {
   tagline: "L'alimentation infantile réinventée",
   email: 'contact@rizuk.com',
   phone: '+33 7 44 17 81 27',
+  addresse: "25 Rue de Ponthieu, 75008 Paris, France"
 } as const;
 
 export const NAVIGATION_LINKS = [

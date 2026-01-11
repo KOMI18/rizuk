@@ -45,17 +45,17 @@ export default function MentionsLegales() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Hébergement</h2>
           <ul className="space-y-2 leading-relaxed">
-            <li><strong>Hébergeur :</strong> LWS</li>
-            <li><strong>Siège social :</strong> 2 rue Jules Ferry, 88190 Golbey, France</li>
+            <li><strong>Hébergeur :</strong> Vercel</li>
+            <li><strong>Siège social :</strong> 340 S Lemon Ave #4133, Walnut, CA 91789 (USA).</li>
             <li>
               <strong>Site internet :</strong>{" "}
               <a
-                href="https://www.lws.fr"
+                href="https://www.vercel.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#ed7332] hover:underline"
               >
-                www.lws.fr
+                www.vercel.com
               </a>
             </li>
           </ul>

@@ -87,16 +87,80 @@ export default function Footer() {
                   {SITE_CONFIG.phone}
                 </a>
               </li>
+                <li>
+                <a
+                 
+                  className="text-white hover:text-primary transition-colors text-sm"
+                >
+                  {SITE_CONFIG.addresse}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-          <p className="text-white text-sm">
-            © {currentYear} {SITE_CONFIG.name}. Tous droits réservés.
-          </p>
+       {/* Copyright + Social */}
+<div className="mt-12 pt-8 border-t border-gray-200">
+  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    
+    <p className="text-white text-sm text-center md:text-left">
+      © {currentYear} {SITE_CONFIG.name}. Tous droits réservés.
+    </p>
+
+    {/* Social links */}
+        <div className="flex items-center gap-4">
+          <a
+            href="https://www.linkedin.com/company/rizuk/about/?viewAsMember=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-primary transition-colors"
+            aria-label="Linkedin"
+          >
+           <Image
+                    src={`/icons/linkedin.svg`} 
+                    alt={"icon"}
+                    width={28}
+                    height={28}
+                    className="mb-1 opacity-90"
+                              />
+          </a>
+
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-primary transition-colors"
+            aria-label="Facebook"
+          >
+            <Image
+                     src={`/icons/brand-facebook.svg`} 
+                     alt={"icon"}
+                     width={28}
+                     height={28}
+                     className="mb-1 opacity-90"
+                               />
+          </a>
+
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-primary transition-colors"
+            aria-label="LinkedIn"
+          >
+             <Image
+                      src={`/icons/brand-tiktok.svg`} 
+                      alt={"icon"}
+                      width={28}
+                      height={28}
+                      className="mb-1 opacity-90"
+                                />
+          </a>
         </div>
+      </div>
+    </div>
+
       </div>
     </footer>
   );
