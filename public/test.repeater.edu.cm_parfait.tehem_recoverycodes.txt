@@ -1,0 +1,9 @@
+Two-Factor Authentication Recovery Codes - https://test.repeater.edu.cm (parfait.tehem)
+
+Each line of 16 letters and numbers is a single recovery code, with optional spaces for readability. To use a recovery code, after entering your username and password, enter the code like "1234 5678 90AB CDEF" at the 2FA prompt. If your site has a custom login prompt and does not show a 2FA prompt, you can use the single-step method by entering your password and the code together in the Password field, like "mypassword1234 5678 90AB CDEF". Your recovery codes are:
+
+4350 b43b dabb 11cf
+8ea5 e84a cf1c 562e
+0b96 1447 209a faa3
+62f7 c8bc c206 3f5c
+7dba 9bb0 d23b 1991

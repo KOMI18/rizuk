@@ -1,41 +1,74 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import Heading from '@/components/ui/Heading';
-import { Suspense } from 'react'; // 1. Importer Suspense
+import { Suspense, useState } from 'react'; // 1. Importer Suspense
 
 // 2. Créer un composant interne pour le formulaire
 function ContactForm() {
   const searchParams = useSearchParams();
   const produitSelectionne = searchParams.get('produit');
+ const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        produit: formData.get('produit'),
+        message: formData.get('message'),
+      }),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      setSuccess(true);
+      e.currentTarget.reset();
+    }
+  };
+
+  if (success) {
+    return (
+      <p className="text-green-600 font-semibold text-center">
+         Votre message a bien été envoyé. Nous vous contacterons rapidement.
+      </p>
+    );
+  }
   return (
-    <form className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
       <div className="flex flex-col gap-2">
         <label className="font-semibold text-gray-700 ml-2">Votre Nom</label>
-        <input type="text" placeholder="Ex: Marie Dupont" className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
+        <input type="text" name="name" required  placeholder="Ex: Marie Dupont" className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
       </div>
       <div className="flex flex-col gap-2">
         <label className="font-semibold text-gray-700 ml-2">Votre Email</label>
-        <input type="email" placeholder="Ex: marie.dupont@email.com" className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
+        <input type="email" required name="email" placeholder="Ex: marie.dupont@email.com" className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
       </div>
       <div className="md:col-span-2 flex flex-col gap-2">
         <label className="font-semibold text-gray-700 ml-2">Produit/Services souhaité ? </label>
         <select 
+          name="produit"
           defaultValue={produitSelectionne || ""}
+          required
           className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none appearance-none"
         >
           <option value="robot-culinaire">Robot Culinaire 4-en-1</option>
           <option value="chauffe-biberon">Chauffe-Biberon Ultra-Rapide</option>
           <option value="chauffe-biberon">Un Partenariat</option>
           <option value="chauffe-biberon">Autres</option>
-
-
         </select>
       </div>
-
       <div className="md:col-span-2 flex flex-col gap-2">
         <label className="font-semibold text-gray-700 ml-2">Message (Optionnel)</label>
-        <textarea rows={4} placeholder="Posez-nous vos questions..." className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
+        <textarea  name="message" rows={4} placeholder="Posez-nous vos questions..." className="p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-primary outline-none" />
       </div>
 
       <button className="md:col-span-2 bg-primary text-white font-bold py-5 rounded-2xl hover:bg-primary-dark transition-all shadow-lg text-lg">
