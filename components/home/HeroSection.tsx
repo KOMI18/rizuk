@@ -1,15 +1,17 @@
 "use client"; // Obligatoire pour les animations
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion , Variants } from 'framer-motion';
 import Button from '@/components/ui/Button';
 
 export default function HeroSection() {
   // Variantes d'animation pour les éléments de texte
-  const fadeInUp = {
+  const fadeInUp : Variants = {
     initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }
+    animate: { opacity: 1, y: 0 , 
+      transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }
+    },
+    
   };
 
   return (
@@ -20,8 +22,7 @@ export default function HeroSection() {
           
           {/* 1. TEXTE ET BOUTONS (À GAUCHE) */}
           <div className="w-full md:w-1/2 flex flex-col items-start text-left">
-           
-
+  
             <motion.h1 
               {...fadeInUp}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.1] mb-6"
